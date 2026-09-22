@@ -6,7 +6,7 @@ income = int(input("To get started, what is your net monthly income? "))
 
 print()
 essentials = []
-print("First, let's discuss living expenses. What is the minimum you must spend monthly in the following categories?")
+print("Let's discuss living expenses. What is the minimum you must spend monthly in the following categories?")
 
 print()
 essentials.append(int(input("phone bill: ")))
