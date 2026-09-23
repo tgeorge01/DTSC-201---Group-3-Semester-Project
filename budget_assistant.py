@@ -9,7 +9,7 @@ income = int(input("To get started, what is your net monthly income? "))
 
 print()
 essentials = []
-print("Let's discuss living expenses--essential, here-and-now needs. What is the minimum you must spend monthly in the following categories?")
+print("Let's discuss living expenses--essential, here-and-now needs. What is the minimum you must spend in the following categories?")
 
 print()
 essentials.append(int(input("phone bill: ")))
@@ -23,12 +23,12 @@ essentials.append(int(input("other necessary expenses not listed: ")))
 print()
 percent_essential = round((sum(essentials) / income) * 100)
 margin = income - (sum(essentials))
-print(f"You're living from {percent_essential}% of your income. After all necessary monthly expenses are covered, you have a margin of ${margin}.")
+print(f"You're living from {percent_essential}% of your income. After all necessary expenses are covered, you have a margin of ${margin}.")
 
 print()
 print("Now consider how much you currently spend on non-essentials, like restaurants, merchandise, and leisure activties. These are discretionary expenses.")
 print("(It's okay to have some "fun money." However, keep in mind that the more you spend on non-essentials, the less you will be able to invest in things you may need in the future.)")
-int(input("Based on your available margin, how much are you willing to spend monthly on discretionary expenses going forward?" )
+int(input("Based on your available margin, how much are you willing to spend on discretionary expenses going forward?" )
 
 print()
 long_term = []
@@ -48,18 +48,22 @@ print("If you have debt, you can put extra money toward your monthly repayment t
 long_term.append(int(input("extra debt repayment: ")))
 
 print()
+print("It's never too early to begin investing in retirement. Investing 15% of your net income is standard, but it's okay to start small.")
 long_term.append(int(input("retirement: ")))
 print(f"You have ${margin - sum(long_term)} remaining.")
 
 print()
-long_term.append(int(input("savings (e.g., college, car, home, vacation): ")))
+print("You probably have goals for the future which will require funding--college, a new car or home, vacation, etc. Save some of your margin for your future self.")
+long_term.append(int(input("savings: ")))
 print(f"You have ${margin - sum(long_term)} remaining.")
 
 print()
-long_term.append(int(input("investments (e.g., stocks, bonds, index funds, real estate): ")))
+print("Investments--such as stocks or real estate--are a source of side income for many people. If you still have margin, feel free to invest it.")
+long_term.append(int(input("investments: ")))
 print(f"You have ${margin - sum(long_term)} remaining.")
 
 print()
+print("Your excess can meet someone else's needs. Consider giving to a cause you care about.")
 long_term.append(int(input("charity: ")))
 print(f"You have ${margin - sum(long_term)} remaining.")
 
