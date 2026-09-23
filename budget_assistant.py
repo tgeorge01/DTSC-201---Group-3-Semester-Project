@@ -26,7 +26,7 @@ margin = income - (sum(essentials))
 print(f"You're living from {percent_essential}% of your income. After all necessary monthly expenses are covered, you have a margin of ${margin}.")
 
 print()
-print("Now consider how much you currently spend monthly on non-essentials, like restaurants, merchandise, and leisure activties. These are discretionary expenses.")
+print("Now consider how much you currently spend on non-essentials, like restaurants, merchandise, and leisure activties. These are discretionary expenses.")
 print("(It's okay to have some "fun money." However, keep in mind that the more you spend on non-essentials, the less you will be able to invest in things you may need in the future.)")
 int(input("Based on your available margin, how much are you willing to spend monthly on discretionary expenses going forward?" )
 
