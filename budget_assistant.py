@@ -22,17 +22,19 @@ essentials.append(int(input("other necessary expenses not listed: ")))
 
 print()
 percent_essential = round((sum(essentials) / income) * 100)
-margin = income - (sum(essentials))
+margin = income - sum(essentials)
 print(f"You're living from {percent_essential}% of your income. After all necessary expenses are covered, you have a margin of ${margin}.")
 
 print()
 print("Now consider how much you currently spend on non-essentials, like restaurants, merchandise, and leisure activties. These are discretionary expenses.")
-print('(It's okay to have some "fun money." However, keep in mind that the more you spend on non-essentials, the less you will be able to invest in things you may need in the future.)")
-int(input("Based on your available margin, how much are you willing to spend on discretionary expenses going forward?' )
+print('(It's okay to have some "fun money." However, keep in mind that the more you spend on non-essentials, the less you will be able to invest in things you may need in the future.)')
+nonessentials = int(input("Based on your available margin, how much are you willing to spend on discretionary expenses going forward? ")
+
+margin = income - sum(essentials) - nonessentials
 
 print()
 long_term = []
-print(f"Now let's plan how to use your remaining ${margin}.")
+print(f"Your new margin is ${margin}. Let's put it to good use.")
 
 print()
 print("For the following categories, enter the dollar amount you intend to allocate.")
