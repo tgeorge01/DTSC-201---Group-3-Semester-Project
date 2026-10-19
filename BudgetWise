@@ -1,0 +1,63 @@
+import streamlit as st
+
+st.set_page_config(
+    page_title="BudgetWise",
+    page_icon="💰",
+    layout="wide"
+)
+
+st.title("💰 BudgetWise")
+st.subheader("Your Personal Budgeting Assistant")
+
+st.write(
+    "Welcome to BudgetWise! Use this website to plan your "
+    "monthly budget, track spending, and work toward your "
+    "financial goals."
+)
+
+st.divider()
+
+st.header("Monthly Income")
+
+income = st.number_input(
+    "Enter your monthly take-home income ($)",
+    min_value=0.0,
+    value=2500.0,
+    step=100.0
+)
+
+st.header("Monthly Expenses")
+
+rent = st.number_input("Rent or housing ($)", min_value=0.0)
+groceries = st.number_input("Groceries ($)", min_value=0.0)
+transportation = st.number_input(
+    "Transportation ($)", min_value=0.0
+)
+utilities = st.number_input("Utilities and phone ($)", min_value=0.0)
+insurance = st.number_input("Insurance ($)", min_value=0.0)
+other = st.number_input("Other expenses ($)", min_value=0.0)
+
+total_expenses = (
+    rent + groceries + transportation
+    + utilities + insurance + other
+)
+
+remaining = income - total_expenses
+
+st.divider()
+st.header("Your Budget Summary")
+
+col1, col2, col3 = st.columns(3)
+
+col1.metric("Monthly Income", f"${income:,.2f}")
+col2.metric("Total Expenses", f"${total_expenses:,.2f}")
+col3.metric("Money Remaining", f"${remaining:,.2f}")
+
+if remaining < 0:
+    st.error("Your expenses exceed your income. Review your budget.")
+elif remaining == 0:
+    st.warning("Your entire income is allocated.")
+else:
+    st.success(
+        f"You have ${remaining:,.2f} remaining after expenses."
+    )
