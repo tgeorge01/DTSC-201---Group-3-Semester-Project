@@ -2,9 +2,9 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-st.set_page_config(page_title="BudgetWise", page_icon="💰", layout="wide")
+st.set_page_config(page_title="BudgetWiser", page_icon="💰", layout="wide")
 
-st.title("💰 BudgetWise")
+st.title("💰 BudgetWiser")
 st.caption("Your personal budgeting assistant")
 
 page = st.sidebar.radio("Navigation", ["Dashboard", "Budget Planner", "About"])
