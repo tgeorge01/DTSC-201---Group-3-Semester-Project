@@ -13,22 +13,50 @@ st.write(
 # --- INCOMES & ESSENTIALS ---
 st.header("1. Income & Living Expenses")
 income = st.number_input(
-    "What is your net monthly income ($)?", min_value=0, value=5000, step=100
+    "What is your net monthly income ($)?",
+    min_value=0,
+    value=5000,
+    step=100,
+    key="income_input",
 )
 
 st.subheader("Essential Living Expenses")
-phone = st.number_input("Phone bill", min_value=0, value=75, step=5)
-groceries = st.number_input("Groceries", min_value=0, value=400, step=25)
-gas = st.number_input(
-    "Gasoline and vehicle maintenance", min_value=0, value=200, step=25
+phone = st.number_input(
+    "Phone bill", min_value=0, value=75, step=5, key="phone_input"
 )
-rent = st.number_input("Rent or house payment", min_value=0, value=1500, step=50)
-insurance = st.number_input("Insurance (health, home, car)", min_value=0, value=200, step=25)
+groceries = st.number_input(
+    "Groceries", min_value=0, value=400, step=25, key="groceries_input"
+)
+gas = st.number_input(
+    "Gasoline and vehicle maintenance",
+    min_value=0,
+    value=200,
+    step=25,
+    key="gas_input",
+)
+rent = st.number_input(
+    "Rent or house payment", min_value=0, value=1500, step=50, key="rent_input"
+)
+insurance = st.number_input(
+    "Insurance (health, home, car)",
+    min_value=0,
+    value=200,
+    step=25,
+    key="insurance_input",
+)
 debt_repayment = st.number_input(
-    "Debt repayment (student loans, mortgage)", min_value=0, value=300, step=25
+    "Debt repayment (student loans, mortgage)",
+    min_value=0,
+    value=300,
+    step=25,
+    key="debt_input",
 )
 essential_other = st.number_input(
-    "Other essentials", min_value=0, value=50, step=10
+    "Other essentials",
+    min_value=0,
+    value=50,
+    step=10,
+    key="essential_other_input",
 )
 
 essentials = [
@@ -58,6 +86,7 @@ nonessentials = st.number_input(
     max_value=max(0, margin),
     value=min(300, max(0, margin)),
     step=50,
+    key="nonessentials_input",
 )
 margin -= nonessentials
 
@@ -75,6 +104,7 @@ emergency_fund = st.number_input(
     max_value=max(0, margin),
     value=min(200, max(0, margin)),
     step=50,
+    key="emergency_input",
 )
 extra_debt = st.number_input(
     "Extra debt repayment",
@@ -82,6 +112,7 @@ extra_debt = st.number_input(
     max_value=max(0, margin - emergency_fund),
     value=0,
     step=50,
+    key="extra_debt_input",
 )
 retirement = st.number_input(
     "Retirement savings",
@@ -89,6 +120,7 @@ retirement = st.number_input(
     max_value=max(0, margin - emergency_fund - extra_debt),
     value=min(300, max(0, margin - emergency_fund - extra_debt)),
     step=50,
+    key="retirement_input",
 )
 savings = st.number_input(
     "General savings (goals, vacations, car)",
@@ -96,6 +128,7 @@ savings = st.number_input(
     max_value=max(0, margin - emergency_fund - extra_debt - retirement),
     value=0,
     step=50,
+    key="savings_input",
 )
 investments = st.number_input(
     "Investments (stocks, real estate)",
@@ -105,6 +138,7 @@ investments = st.number_input(
     ),
     value=0,
     step=50,
+    key="investments_input",
 )
 charity = st.number_input(
     "Charity / Giving",
@@ -120,6 +154,7 @@ charity = st.number_input(
     ),
     value=0,
     step=50,
+    key="charity_input",
 )
 long_term_other = st.number_input(
     "Other long-term allocation",
@@ -136,6 +171,7 @@ long_term_other = st.number_input(
     ),
     value=0,
     step=50,
+    key="long_term_other_input",
 )
 
 long_term = [
