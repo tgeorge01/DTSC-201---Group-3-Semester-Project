@@ -24,20 +24,14 @@ if page == "Dashboard":
     col1, col2 = st.columns(2)
 
     with col1:
-        housing = st.number_input("Housing", min_value=0.0, value=0.0)
-        groceries = st.number_input("Groceries", min_value=0.0, value=0.0)
-        transportation = st.number_input(
-            "Transportation", min_value=0.0, value=0.0
-        )
+        housing = st.number_input("Housing", min_value=0.0, value=0.0, step=10.0)
+        transportation = st.number_input("Transportation", min_value=0.0, value=0.0, step=10.0)
+        insurance = st.number_input("Insurance", min_value=0.0, value=0.0, step=10)
 
     with col2:
-        utilities = st.number_input(
-            "Utilities and phone", min_value=0.0, value=0.0
-        )
-        insurance = st.number_input(
-            "Insurance", min_value=0.0, value=0.0
-        )
-        other = st.number_input("Other expenses", min_value=0.0, value=0.0)
+        utilities = st.number_input("Utilities and phone", min_value=0.0, value=0.0, step=10)
+        groceries = st.number_input("Groceries", min_value=0.0, value=0.0, step=10.0)
+        other = st.number_input("Other expenses", min_value=0.0, value=0.0, step=10)
 
     total_expenses = (
         housing + groceries + transportation + utilities + insurance + other
