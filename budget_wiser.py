@@ -16,7 +16,7 @@ if page == "Dashboard":
     income = st.number_input(
         "Monthly net income ($)",
         min_value=0.0,
-        value=2500.0,
+        value=0.0,
         step=100.0,
     )
 
