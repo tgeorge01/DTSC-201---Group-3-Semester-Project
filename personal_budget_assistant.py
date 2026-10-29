@@ -91,6 +91,6 @@ else:
 print("Here's a breakdown of your planned cashflow.")
 
 
-## Create pandas dataframe and pie chart showing budget categories, amounts, and percentages
-## Make it possible for user to return to previous questions
+## Create pie chart showing monthly budget categories and associated dollar amounts
+## Make it possible for user to enter values in preferred order
 
