@@ -163,7 +163,6 @@ st.header("4. Cash Flow Breakdown")
 categories = []
 amounts = []
 
-# Add essentials grouped or individually
 if total_essentials > 0:
     categories.append("Living Essentials")
     amounts.append(total_essentials)
