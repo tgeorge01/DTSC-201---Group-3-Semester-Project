@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="BudgetWiser", page_icon="💰", layout="wide")
 
 st.title("💰 BudgetWiser")
-st.caption("Personal budgeting assistant")
+st.caption("Personal Budgeting Assistant")
 
 page = st.sidebar.radio("Navigation", ["Dashboard", "Budget Planner", "About"])
 
@@ -46,7 +46,7 @@ if page == "Dashboard":
 
     st.divider()
 
-    st.header("Your Budget Summary")
+    st.header("Summary")
 
     col1, col2, col3 = st.columns(3)
     col1.metric("Monthly Income", f"${income:,.2f}")
