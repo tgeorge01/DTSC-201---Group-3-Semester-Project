@@ -8,7 +8,7 @@ st.set_page_config(
     page_title="BudgetWiser", page_icon="💰", layout="centered"
 )
 
-st.title("💰 BudgetWiser Personal Budget Assistant")
+st.title("💰 BudgetWiser Assistant")
 st.write(
     "Organize your monthly cash flow and plan your long-term financial goals."
 )
