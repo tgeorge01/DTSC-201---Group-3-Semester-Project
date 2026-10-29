@@ -60,6 +60,7 @@ if page == "Dashboard":
             "Utilities and phone",
             "Insurance",
             "Other expenses",
+            "Margin"
         ],
         "Amount": [
             housing,
@@ -68,15 +69,15 @@ if page == "Dashboard":
             utilities,
             insurance,
             other,
+            remaining
         ],
     })
 
-    st.subheader("Expense Breakdown")
     fig = px.pie(
         expense_data,
         names="Category",
         values="Amount",
-        title="Expense Distribution",
+        title="Expense Breakdown",
     )
     st.plotly_chart(fig, use_container_width=True)
 
