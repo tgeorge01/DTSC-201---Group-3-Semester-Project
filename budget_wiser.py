@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 st.set_page_config(
-    page_title="Personal Budget Assistant", page_icon="💰", layout="centered"
+    page_title="BudgetWiser", page_icon="💰", layout="centered"
 )
 
-st.title("💰 Personal Budget Assistant")
+st.title("💰 BudgetWiser Personal Budget Assistant")
 st.write(
-    "Organize your monthly cash flow, track living expenses, and plan your long-term financial goals."
+    "Organize your monthly cash flow and plan your long-term financial goals."
 )
 
 # --- INCOMES & ESSENTIALS ---
