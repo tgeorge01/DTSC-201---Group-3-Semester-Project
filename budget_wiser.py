@@ -5,39 +5,39 @@ import streamlit as st
 st.set_page_config(page_title="BudgetWiser", page_icon="💰", layout="wide")
 
 st.title("💰 BudgetWiser")
-st.caption("Your personal budgeting assistant")
+st.caption("Personal budgeting assistant")
 
 page = st.sidebar.radio("Navigation", ["Dashboard", "Budget Planner", "About"])
 
 if page == "Dashboard":
     st.header("Monthly Budget Dashboard")
 
-    st.subheader("Your Income")
+    st.subheader("Income")
     income = st.number_input(
-        "Monthly income after taxes ($)",
+        "Monthly net income ($)",
         min_value=0.0,
         value=2500.0,
         step=100.0,
     )
 
-    st.subheader("Your Monthly Expenses")
+    st.subheader("Expenses")
     col1, col2 = st.columns(2)
 
     with col1:
-        housing = st.number_input("Housing ($)", min_value=0.0, value=1000.0)
-        groceries = st.number_input("Groceries ($)", min_value=0.0, value=350.0)
+        housing = st.number_input("Housing", min_value=0.0, value=0.0)
+        groceries = st.number_input("Groceries", min_value=0.0, value=0.0)
         transportation = st.number_input(
-            "Transportation ($)", min_value=0.0, value=200.0
+            "Transportation", min_value=0.0, value=0.0
         )
 
     with col2:
         utilities = st.number_input(
-            "Utilities and phone ($)", min_value=0.0, value=150.0
+            "Utilities and phone", min_value=0.0, value=0.0
         )
         insurance = st.number_input(
-            "Insurance ($)", min_value=0.0, value=100.0
+            "Insurance", min_value=0.0, value=0.0
         )
-        other = st.number_input("Other expenses ($)", min_value=0.0, value=200.0)
+        other = st.number_input("Other expenses", min_value=0.0, value=0.0)
 
     total_expenses = (
         housing + groceries + transportation + utilities + insurance + other
@@ -51,7 +51,7 @@ if page == "Dashboard":
     col1, col2, col3 = st.columns(3)
     col1.metric("Monthly Income", f"${income:,.2f}")
     col2.metric("Total Expenses", f"${total_expenses:,.2f}")
-    col3.metric("Money Remaining", f"${remaining:,.2f}")
+    col3.metric("Margin", f"${remaining:,.2f}")
 
     if remaining < 0:
         st.error("You are spending more than your monthly income.")
